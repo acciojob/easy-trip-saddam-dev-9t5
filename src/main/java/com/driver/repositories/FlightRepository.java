@@ -56,12 +56,11 @@ public class FlightRepository {
                 passengers.remove(passengerId);
                 if(this.revenueDB.containsKey(flightId)) {
                     int currentRevenue = this.revenueDB.get(flightId);
-                    int canceletionCharge = 3000 + 50*(idx+1);
+                    int canceletionCharge = 3000 + 50*idx;
                     this.revenueDB.put(flightId, currentRevenue-canceletionCharge);
                 }
                 return true;
             }
-            return false;
         }
         return false;
     }
